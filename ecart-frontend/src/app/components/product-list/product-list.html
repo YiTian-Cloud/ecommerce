@@ -1,0 +1,16 @@
+<h2>Catalog</h2>
+
+<div *ngIf="loading">Loading products…</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div class="grid">
+  <div class="card" *ngFor="let p of products">
+    <div class="image" *ngIf="p.imageUrl">
+      <img [src]="p.imageUrl" [alt]="p.name" />
+    </div>
+    <h3>{{ p.name }}</h3>
+    <p class="price">${{ p.price | number : '1.2-2' }}</p>
+    <p class="desc">{{ p.description }}</p>
+    <button (click)="addToCart(p)">Add to Cart</button>
+  </div>
+</div>

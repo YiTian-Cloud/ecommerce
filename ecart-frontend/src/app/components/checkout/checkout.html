@@ -1,0 +1,25 @@
+<h2>Checkout</h2>
+
+<div *ngIf="items().length === 0">
+  Your cart is empty.
+</div>
+
+<form *ngIf="items().length > 0" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label>Name</label>
+    <input [(ngModel)]="name" name="name" required />
+  </div>
+
+  <div class="field">
+    <label>Email</label>
+    <input [(ngModel)]="email" name="email" required />
+  </div>
+
+  <p>Total: <strong>${{ total() | number : '1.2-2' }}</strong></p>
+
+  <button type="submit" [disabled]="processing">
+    {{ processing ? 'Processing…' : 'Pay & Place Order' }}
+  </button>
+
+  <p *ngIf="message" class="message">{{ message }}</p>
+</form>

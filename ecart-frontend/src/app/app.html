@@ -1,0 +1,26 @@
+<header class="app-header">
+  <h1>eCart</h1>
+
+  <nav>
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Catalog</a
+    >
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a *ngIf="user()" routerLink="/orders" routerLinkActive="active">
+      Orders
+    </a>
+    <a *ngIf="!user()" routerLink="/login" routerLinkActive="active">
+      Login
+    </a>
+    <button *ngIf="user()" type="button" (click)="logout()">
+      Logout ({{ user()?.name }})
+    </button>
+  </nav>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>

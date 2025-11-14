@@ -1,0 +1,35 @@
+.shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  nav a {
+    margin-left: 0.75rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .main {
+    margin-top: 1rem;
+  }
+  

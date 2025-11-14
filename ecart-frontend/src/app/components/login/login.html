@@ -1,0 +1,15 @@
+<h2>Login</h2>
+
+<form (ngSubmit)="submit()">
+  <div class="field">
+    <label>Name</label>
+    <input [(ngModel)]="name" name="name" required />
+  </div>
+
+  <div class="field">
+    <label>Email</label>
+    <input [(ngModel)]="email" name="email" required />
+  </div>
+
+  <button type="submit">Continue</button>
+</form>
