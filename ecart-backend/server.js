@@ -122,19 +122,19 @@ async function seedProductsIfEmpty() {
       name: 'T-Shirt',
       price: 19.99,
       description: 'Soft cotton tee, perfect for casual wear.',
-      imageUrl: 'http://localhost:4200/tshirt.jpg', // or /tshirt.jpg if served by frontend
+      imageUrl: 'tshirt.jpg', // or /tshirt.jpg if served by frontend
     },
     {
       name: 'Coffee Mug',
       price: 9.99,
       description: 'Ceramic mug for your favorite drinks.',
-      imageUrl: 'http://localhost:4200/mug.jpg',
+      imageUrl: 'mug.jpg',
     },
     {
       name: 'Sticker Pack',
       price: 4.99,
       description: 'Set of vinyl stickers.',
-      imageUrl: 'http://localhost:4200/stickers.jpg',
+      imageUrl: 'stickerpack.jpg',
     },
   ];
 
