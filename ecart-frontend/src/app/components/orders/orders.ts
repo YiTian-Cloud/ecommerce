@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 interface OrderItem {
   name: string;
@@ -48,12 +49,13 @@ export class OrdersComponent implements OnInit {
 
   private loadOrders(): void {
     this.loading = true;
-
+    
+    const API_BASE_URL = environment.apiBaseUrl;
+    const url = `${API_BASE_URL}/api/orders?email=${encodeURIComponent(
+      this.userEmail!
+    )}`;
     this.http
-      .get<Order[]>(
-        'http://localhost:3000/api/orders?email=' +
-          encodeURIComponent(this.userEmail!)
-      )
+      .get<Order[]>(url)
       .subscribe({
         next: (orders) => {
           console.log('Orders from backend:', orders);
