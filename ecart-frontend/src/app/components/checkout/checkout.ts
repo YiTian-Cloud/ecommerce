@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CartService, type CartItem } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -58,9 +59,10 @@ export class CheckoutComponent {
     };
 
     console.log('Sending checkout payload:', payload);
+    const API_BASE_URL = environment.apiBaseUrl;
 
     this.http
-      .post('http://localhost:3000/api/checkout', payload)
+      .post(`${API_BASE_URL}/api/checkout`, payload)
       .subscribe({
         next: (res: any) => {
           console.log('Checkout success:', res);
